@@ -90,6 +90,7 @@ public class SwipeToLoadLayout extends ViewGroup {
 
     /**
      * target view top offset
+     * 
      */
     private int mHeaderOffset;
 
@@ -149,12 +150,14 @@ public class SwipeToLoadLayout extends ViewGroup {
     /**
      * <b>ATTRIBUTE:</b>
      * offset to trigger refresh
+     * 触发下拉刷新的偏移量
      */
     private float mRefreshTriggerOffset;
 
     /**
      * <b>ATTRIBUTE:</b>
      * offset to trigger load more
+     * 触发上拉加载的偏移量
      */
     private float mLoadMoreTriggerOffset;
 
@@ -359,24 +362,29 @@ public class SwipeToLoadLayout extends ViewGroup {
         // header
         if (mHeaderView != null) {
             final View headerView = mHeaderView;
+            // 测量子view
             measureChildWithMargins(headerView, widthMeasureSpec, 0, heightMeasureSpec, 0);
             MarginLayoutParams lp = ((MarginLayoutParams) headerView.getLayoutParams());
             mHeaderHeight = headerView.getMeasuredHeight() + lp.topMargin + lp.bottomMargin;
             if (mRefreshTriggerOffset < mHeaderHeight) {
+                // 触发下拉刷新的偏移量，默认是头视图的高度
                 mRefreshTriggerOffset = mHeaderHeight;
             }
         }
         // target
         if (mTargetView != null) {
             final View targetView = mTargetView;
+            // 测量子view
             measureChildWithMargins(targetView, widthMeasureSpec, 0, heightMeasureSpec, 0);
         }
         // footer
         if (mFooterView != null) {
             final View footerView = mFooterView;
+            // 测量子view
             measureChildWithMargins(footerView, widthMeasureSpec, 0, heightMeasureSpec, 0);
             MarginLayoutParams lp = ((MarginLayoutParams) footerView.getLayoutParams());
             mFooterHeight = footerView.getMeasuredHeight() + lp.topMargin + lp.bottomMargin;
+            // 触发上拉加载的偏移量，默认是尾视图的高度
             if (mLoadMoreTriggerOffset < mFooterHeight) {
                 mLoadMoreTriggerOffset = mFooterHeight;
             }
