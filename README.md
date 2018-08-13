@@ -1,14 +1,21 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SwipeToLoadLayout-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2812)
+
+# 添加阅读注释
+
 # SwipeToLoadLayout
 SwipeToLoadLayout is a reusable pull-to-refresh and pull-to-load-more widget.
+一个 上拉、下拉 控件
 
 ## Supported View
 Theoretically support all kinds of views.
+理论上支持各种view
 
 ## Demo
+下载demo
 [Download](https://raw.githubusercontent.com/Aspsine/SwipeToLoadLayout/master/art/demo.apk)
 
 ## Demo ScreenShot & Video(Youtube)
+demo截图
 - ListView & GridView
 
 [![ListView & GridView](http://img.youtube.com/vi/ThIKO3vz6Bs/0.jpg)](https://youtu.be/ThIKO3vz6Bs) 
@@ -44,6 +51,7 @@ repositories {
 }
 ```
 - Step 2. Add the dependency in the form
+添加依赖
 ```
 dependencies {
 	compile 'com.github.Aspsine:SwipeToLoadLayout:1.0.4'
@@ -51,6 +59,8 @@ dependencies {
 ```
 - Step 3.
 Look over [Quick Setup](https://github.com/Aspsine/SwipeToLoadLayout/wiki/Quick-Setup) for more details.
+浏览上面的链接，查看如何使用
+
 You can find more customized header view and footer view in the demo app.
 
 ## Thanks
