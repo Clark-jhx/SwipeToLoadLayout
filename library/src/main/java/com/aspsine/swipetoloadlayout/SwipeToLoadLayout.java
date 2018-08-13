@@ -327,6 +327,7 @@ public class SwipeToLoadLayout extends ViewGroup {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
+        // 返回直接子元素的个数，不包括子元素内部的元素
         final int childNum = getChildCount();
         if (childNum == 0) {
             // no child return
@@ -337,11 +338,13 @@ public class SwipeToLoadLayout extends ViewGroup {
             mFooterView = findViewById(R.id.swipe_load_more_footer);
         } else {
             // more than three children: unsupported!
+            // 直接子元素只能是3个，即头、尾、目标控件
             throw new IllegalStateException("Children num must equal or less than 3");
         }
         if (mTargetView == null) {
             return;
         }
+        // 先隐藏头和尾
         if (mHeaderView != null && mHeaderView instanceof SwipeTrigger) {
             mHeaderView.setVisibility(GONE);
         }
